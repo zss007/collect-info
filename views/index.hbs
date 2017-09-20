@@ -1,0 +1,68 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../static/weui.css">
+    <link rel="stylesheet" type="text/css" href="../static/index.css">
+    <script rel="stylesheet" type="text/javascript" src="../static/zepto.min.js"></script>
+    <script rel="stylesheet" type="text/javascript" src="../static/index.js"></script>
+    <title>加班登记</title>
+</head>
+<body class="collect-info">
+<div class="title">
+    <h3>加班登记
+        <small>{{date}}</small>
+    </h3>
+</div>
+{{#if notice }}
+    <div class="notice">
+        <span>注意：</span>
+        <div class="list">
+            {{#each notice}}
+                <div>{{this}}</div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+<div class="info">
+    <!--姓名、是否订餐、加班时段、是否坐班车、加班日期-->
+    <ol class="list">
+        <li class="key">姓名</li>
+        <input type="text" name="name" class="val">
+
+        <li class="key">是否订餐</li>
+        <label class="val-radio"><input name="orderDinner" type="radio" value="是"><span>是</span></label>
+        <label class="val-radio"><input name="orderDinner" type="radio" value="否"><span>否</span></label>
+
+        <li class="key">是否坐班车</li>
+        <label class="val-radio"><input name="orderBus" type="radio" value="是"><span>是</span></label>
+        <label class="val-radio"><input name="orderBus" type="radio" value="否"><span>否</span></label>
+
+        <li class="key">加班时段</li>
+        <label class="val-radio"><input name="time" type="radio" value="8点"><span>8点</span></label>
+        <label class="val-radio"><input name="time" type="radio" value="9点"><span>9点</span></label>
+    </ol>
+    <div class="submit" onclick="submitInfo(event)">
+        <button id="submit-btn">提交</button>
+    </div>
+</div>
+<div id="loadingToast">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-loading weui-icon_toast"></i>
+        <p class="weui-toast__content">数据加载中</p>
+    </div>
+</div>
+<div id="toast-success">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-success-circle weui-icon_toast"></i>
+        <p class="weui-toast__content" id="success-content"></p>
+    </div>
+</div>
+<div id="toast-info">
+    <div class="weui-mask_transparent"></div>
+    <div class="weui-toast">
+        <i class="weui-icon-info-circle weui-icon_toast"></i>
+        <p class="weui-toast__content" id="info-content"></p>
+    </div>
+</div>
+</body>

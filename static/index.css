@@ -1,0 +1,99 @@
+body {
+  -webkit-tap-highlight-color: transparent; }
+
+.collect-info {
+  overflow: auto;
+  line-height: 1;
+  background: #fafafa; }
+  .collect-info .title {
+    text-align: center;
+    overflow: auto; }
+    .collect-info .title h3 {
+      margin: 40px 0 15px 0;
+      font-size: 25px; }
+      .collect-info .title h3 small {
+        margin-left: 5px;
+        font-size: 14px; }
+  .collect-info .notice {
+    margin-bottom: 15px;
+    padding: 0 20px;
+    line-height: 1.4;
+    font-size: 14px;
+    color: red; }
+    .collect-info .notice span {
+      float: left; }
+    .collect-info .notice .list {
+      padding-left: 5px;
+      overflow: hidden; }
+  .collect-info .info {
+    padding: 0 20px; }
+    .collect-info .info .list {
+      list-style: decimal; }
+      .collect-info .info .list .key {
+        position: relative;
+        margin-left: 20px;
+        font-size: 16px; }
+        .collect-info .info .list .key:before {
+          content: '';
+          position: absolute;
+          top: -7px;
+          left: -40px;
+          right: -20px;
+          height: 30px;
+          background: #f1f1f1;
+          z-index: -1; }
+        .collect-info .info .list .key:after {
+          content: '*';
+          position: absolute;
+          top: 0;
+          margin-left: 3px;
+          font-size: 16px;
+          color: red; }
+      .collect-info .info .list .val {
+        margin: 20px 0;
+        padding: 0 10px;
+        width: 100%;
+        height: 30px;
+        font-size: 16px;
+        border: 1px #aaaaaa solid; }
+        .collect-info .info .list .val:focus, .collect-info .info .list .val:active {
+          outline: 1px #53aaf3 solid; }
+      .collect-info .info .list .val-radio {
+        padding: 20px 0 10px;
+        display: block; }
+        .collect-info .info .list .val-radio input {
+          vertical-align: bottom;
+          margin-right: 10px; }
+        .collect-info .info .list .val-radio:nth-of-type(2n) {
+          padding: 10px 0 20px; }
+    .collect-info .info .submit {
+      text-align: center; }
+      .collect-info .info .submit button {
+        margin: 0 auto;
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        line-height: 38px;
+        font-size: 15px;
+        border-radius: 5px;
+        letter-spacing: 5px;
+        background: #53aaf3;
+        color: white;
+        border: 1px #53aaf3 solid; }
+        .collect-info .info .submit button.disable {
+          background: #a9a9a9;
+          border: 1px #a9a9a9 solid;
+          outline: none; }
+          .collect-info .info .submit button.disable:active {
+            outline: none; }
+  .collect-info #loadingToast, .collect-info #toast-success, .collect-info #toast-info {
+    display: none; }
+    .collect-info #loadingToast #info-content, .collect-info #toast-success #info-content, .collect-info #toast-info #info-content {
+      line-height: 1.4; }
+  .collect-info #toast-success .weui-icon_toast {
+    margin-bottom: 10px;
+    font-size: 50px; }
+  .collect-info #toast-info .weui-icon_toast {
+    margin-bottom: 10px;
+    font-size: 50px;
+    color: gray; }
