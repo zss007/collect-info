@@ -1,0 +1,46 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" type="text/css" href="../static/weui.css">
+    <link rel="stylesheet" type="text/css" href="../static/result.css">
+    <script rel="stylesheet" type="text/javascript" src="../static/zepto.min.js"></script>
+    <title>加班登记结果</title>
+</head>
+<body class="collect-info-result">
+<div class="title">
+    <h3>加班登记
+        <small>{{date}}</small>
+    </h3>
+</div>
+{{#if notice }}
+    <div class="notice">
+        <span>注意：</span>
+        <div class="list">
+            {{#each notice}}
+                <div>{{this}}</div>
+            {{/each}}
+        </div>
+    </div>
+{{/if}}
+<div class="result">
+    <table  border="1" cellspacing="0">
+        <thead>
+        <tr>
+            <td>姓名</td>
+            <td>是否订餐</td>
+            <td>是否坐班车</td>
+            <td>加班时段</td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each userArr}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.orderDinner}}</td>
+                <td>{{this.orderBus}}</td>
+                <td>{{this.time}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+</body>

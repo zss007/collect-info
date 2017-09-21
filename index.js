@@ -40,11 +40,21 @@ app.get('/', function (req, res, next) {
     });
 });
 
+app.get('/result', function (req, res, next) {
+    res.render('result', {
+        date: date,
+        notice: notice,
+        userArr: userArr
+    });
+});
+
 // 接口请求
 app.post('/', function (req, res, next) {
     for (var index in userArr) {
         var user = userArr[index];
         if (user.name === req.body.name) {
+            userArr.splice(index, 1, req.body);
+            fs.writeFile('./json/' + date + '.json', JSON.stringify(userArr));
             res.send('exist');
             return;
         }

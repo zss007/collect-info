@@ -27,7 +27,7 @@ function submitInfo(event) {
         "name": $('input[name="name"]').val(),
         "orderDinner": $('input[name="orderDinner"]:checked').val(),
         "orderBus": $('input[name="orderBus"]:checked').val(),
-        "time": $('input[name="time"]').val()
+        "time": $('input[name="time"]:checked').val()
     };
     var formMap = {
         "name": "'姓名'",
@@ -56,7 +56,7 @@ function submitInfo(event) {
             if (res === 'success') {
                 showMessage('提交成功', 'success');
             }else {
-                showMessage('重复提交', 'info');
+                showMessage('重复提交，已覆盖旧数据', 'info');
             }
         }
     });
