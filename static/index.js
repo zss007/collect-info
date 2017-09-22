@@ -27,12 +27,14 @@ function submitInfo(event) {
         "name": $('input[name="name"]').val(),
         "orderDinner": $('input[name="orderDinner"]:checked').val(),
         "orderBus": $('input[name="orderBus"]:checked').val(),
+        "orderHostel": $('input[name="orderHostel"]:checked').val(),
         "time": $('input[name="time"]:checked').val()
     };
     var formMap = {
         "name": "'姓名'",
         "orderDinner": "'是否订餐'",
         "orderBus": "'是否坐班车'",
+        "orderHostel": "'是否住旅店'",
         "time": "'加班时段'"
     };
     for (var key in formData) {
